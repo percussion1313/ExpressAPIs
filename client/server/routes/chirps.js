@@ -24,8 +24,9 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-    //delete resource
-    res.json(data); 
+    let id = req.params.id 
+    res.json(chirpStore.DeleteChirp(id,req.body));
+    res.sendStatus(200);
 })
 
 module.exports = router;
